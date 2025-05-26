@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Программа тренировок</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Добро пожаловать в программу тренировок</h1>
+    <p>Выберите день недели, чтобы посмотреть программу тренировки:</p>
+    <nav>
+      <button onclick="showDay('monday')">Понедельник</button>
+      <button onclick="showDay('tuesday')">Вторник</button>
+      <button onclick="showDay('wednesday')">Среда</button>
+      <button onclick="showDay('thursday')">Четверг</button>
+      <button onclick="showDay('friday')">Пятница</button>
+      <button onclick="showDay('saturday')">Суббота</button>
+      <button onclick="showDay('sunday')">Воскресенье</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="monday" class="day-section">
+      <h2>Понедельник – СТАРТ!</h2>
+      <ul>
+        <li>Суставная разминка</li>
+        <li>Отжимания от перекладины – 2x4–6</li>
+        <li>Отжимания с колен узким хватом – 2x4–6</li>
+        <li>Динамическая планка – 30 сек</li>
+        <li>Гиперэкстензия №1 – 30 сек</li>
+        <li>Плечи – разогрев – 30 сек</li>
+        <li>Подтягивания австралийские – 2x4–6</li>
+        <li>Подтягивания негативные – 2x4–6</li>
+      </ul>
+    </section>
+
+    <section id="tuesday" class="day-section">
+      <h2>Вторник – Кардио/Отдых</h2>
+      <p>Можно выйти на прогулку или сделать лёгкое кардио 20–30 минут.</p>
+    </section>
+
+    <section id="wednesday" class="day-section">
+      <h2>Среда – БАЗА!</h2>
+      <ul>
+        <li>Суставная разминка</li>
+        <li>Подтягивания австралийские – 2x5–8</li>
+        <li>Подтягивания негативные – 3x5–8</li>
+        <li>Планка – наклоны – 1 мин</li>
+        <li>Планка с касанием плеч – 1 мин</li>
+        <li>Брусья. Отжимания – 3x4–10</li>
+        <li>Отжимания широким хватом – 2x5–8</li>
+        <li>Алмазные отжимания с колен – 1 подход максимум</li>
+      </ul>
+    </section>
+
+    <section id="thursday" class="day-section">
+      <h2>Четверг – Растяжка и Мобилизация</h2>
+      <p>Легкие упражнения на растяжку и дыхательные практики (йога, пилатес).</p>
+    </section>
+
+    <section id="friday" class="day-section">
+      <h2>Пятница – НОГИ!</h2>
+      <ul>
+        <li>Суставная разминка</li>
+        <li>Приседания – 2x25</li>
+        <li>Выпады – 2x20 шагов</li>
+        <li>Приседания сумо – 2x25</li>
+        <li>Икры – 2x25 на каждую ногу</li>
+        <li>Ягодичный мост – 2x30</li>
+        <li>Планка с касанием плеч – 30 сек</li>
+        <li>Гиперэкстензия – позиция 2 – 1 мин</li>
+      </ul>
+    </section>
+
+    <section id="saturday" class="day-section">
+      <h2>Суббота – ПРЕСС!</h2>
+      <p>Делаем упражнения по кругу. 3 круга, 1–2 минуты отдых между кругами.</p>
+      <ul>
+        <li>Суставная разминка</li>
+        <li>Берпи – 5 повторений</li>
+        <li>Джампинг-Джек – 20 повторений</li>
+        <li>Касание плеч в жуке – 30 сек</li>
+        <li>Ситап – 6 повторений</li>
+        <li>Скалолаз – 20 повторений</li>
+        <li>Складка – 6 повторений</li>
+        <li>Планка – 1 минута</li>
+      </ul>
+    </section>
+
+    <section id="sunday" class="day-section">
+      <h2>Воскресенье – Отдых</h2>
+      <p>Полный отдых. Восстановление, прогулка, питание, сон.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Сайт создан примерным пользователем: Ермаханов А.К. | +7 (705) 515-87-10</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
