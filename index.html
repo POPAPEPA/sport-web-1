@@ -4,94 +4,61 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Программа тренировок</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
-    <h1>Тренировочная программа</h1>
-    <p>Выберите день недели, чтобы увидеть тренировку:</p>
-    <select id="language-select">
-      <option value="ru">Русский</option>
-      <option value="kz">Қазақша</option>
-    </select>
+    <h1 data-lang="title">Программа тренировок</h1>
+    <div class="controls">
+      <button id="theme-toggle">🌙</button>
+      <select id="language-selector">
+        <option value="ru">Рус</option>
+        <option value="kk">Қаз</option>
+      </select>
+    </div>
   </header>
 
   <main>
-    <div id="day-buttons">
-      <button data-day="monday">Понедельник</button>
-      <button data-day="tuesday">Вторник</button>
-      <button data-day="wednesday">Среда</button>
-      <button data-day="thursday">Четверг</button>
-      <button data-day="friday">Пятница</button>
-      <button data-day="saturday">Суббота</button>
-      <button data-day="sunday">Воскресенье</button>
-    </div>
-
-    <section id="monday" class="active">
-      <h2>Понедельник — Грудь и трицепс</h2>
-      <ul>
-        <li>Жим лёжа</li>
-        <li>Разводка гантелей</li>
-        <li>Французский жим</li>
-        <li>Отжимания на брусьях</li>
-      </ul>
-    </section>
-
-    <section id="tuesday">
-      <h2>Вторник — Спина и бицепс</h2>
-      <ul>
-        <li>Подтягивания</li>
-        <li>Тяга штанги в наклоне</li>
-        <li>Сгибания рук со штангой</li>
-        <li>Молотковые сгибания</li>
-      </ul>
-    </section>
-
-    <section id="wednesday">
-      <h2>Среда — Отдых или кардио</h2>
-      <p>Отдых или лёгкое кардио</p>
-    </section>
-
-    <section id="thursday">
-      <h2>Четверг — Ноги</h2>
-      <ul>
-        <li>Приседания</li>
-        <li>Жим ногами</li>
-        <li>Выпады</li>
-        <li>Подъёмы на носки стоя</li>
-      </ul>
-    </section>
-
-    <section id="friday">
-      <h2>Пятница — Плечи и пресс</h2>
-      <ul>
-        <li>Жим штанги над головой</li>
-        <li>Подъёмы гантелей в стороны</li>
-        <li>Скручивания</li>
-        <li>Планка</li>
-      </ul>
-    </section>
-
-    <section id="saturday">
-      <h2>Суббота — Функциональная тренировка</h2>
-      <ul>
-        <li>Берпи</li>
-        <li>Скакалка</li>
-        <li>Тяга гири в рывке</li>
-        <li>Бег</li>
-      </ul>
-    </section>
-
-    <section id="sunday">
-      <h2>Воскресенье — Отдых</h2>
-      <p>Полный отдых</p>
+    <section class="schedule">
+      <button id="toggle-schedule" data-lang="toggleSchedule">Расписание недели</button>
+      <div id="week-schedule" class="hidden">
+        <div class="day" data-lang-day="monday">
+          <h2>Понедельник</h2>
+          <ul>
+            <li data-lang="monday1">Разминка - 10 мин</li>
+            <li data-lang="monday2">Бег - 20 мин</li>
+          </ul>
+        </div>
+        <div class="day" data-lang-day="tuesday">
+          <h2>Вторник</h2>
+          <ul>
+            <li data-lang="tuesday1">Пресс - 3 подхода</li>
+            <li data-lang="tuesday2">Планка - 2 мин</li>
+          </ul>
+        </div>
+        <div class="day" data-lang-day="wednesday">
+          <h2>Среда</h2>
+          <ul>
+            <li data-lang="wednesday1">Йога - 30 мин</li>
+          </ul>
+        </div>
+        <div class="day" data-lang-day="thursday">
+          <h2>Четверг</h2>
+          <ul>
+            <li data-lang="thursday1">Кардио - 20 мин</li>
+          </ul>
+        </div>
+        <div class="day" data-lang-day="friday">
+          <h2>Пятница</h2>
+          <ul>
+            <li data-lang="friday1">Растяжка - 15 мин</li>
+          </ul>
+        </div>
+      </div>
     </section>
   </main>
-
-  <footer>
-    <p>Сделано с ❤️ для тренировок</p>
-  </footer>
 
   <script src="script.js"></script>
 </body>
 </html>
+
