@@ -127,3 +127,85 @@ footer {
     margin: 15px auto;
   }
 }
+/* Новый фон с полосками */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(255,255,255,0.02),
+    rgba(255,255,255,0.02) 10px,
+    transparent 10px,
+    transparent 20px
+  );
+  z-index: -1;
+  animation: moveBackground 30s linear infinite;
+}
+
+@keyframes moveBackground {
+  from { background-position: 0 0; }
+  to { background-position: 1000px 1000px; }
+}
+
+/* Панель наверху */
+.top-bar {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  background-color: #1e1e1e;
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 20px;
+  z-index: 1000;
+  gap: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+
+/* Переключатели темы и языка */
+.toggle-group {
+  display: flex;
+  gap: 10px;
+}
+
+#theme-toggle, #language-select {
+  padding: 5px 10px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Светлая тема */
+body.light {
+  background-color: #f4f4f4;
+  color: #222;
+}
+
+body.light header,
+body.light footer,
+body.light .top-bar {
+  background-color: #ffffff;
+  color: #000;
+}
+
+body.light button {
+  background-color: #ddd;
+  color: #000;
+}
+
+body.light button:hover {
+  background-color: #bbb;
+}
+
+body.light .day-section {
+  background-color: #ffffff;
+  color: #222;
+}
+
+/* Увеличенный логотип */
+.logo {
+  max-height: 80px;
+  max-width: 120px;
+}
