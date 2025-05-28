@@ -168,9 +168,11 @@ function changeLanguage() {
   const lang = document.getElementById('language-select').value;
   const t = translations[lang];
 
+  // Меняем текст в описании и футере
   document.querySelector('header p').textContent = t.selectDay;
   document.querySelector('footer p').textContent = t.footer;
 
+  // Обновляем названия и содержимое для каждого дня
   Object.keys(t.days).forEach(day => {
     const section = document.getElementById(day);
     section.querySelector('h2').textContent = t.days[day].title;
@@ -178,16 +180,18 @@ function changeLanguage() {
     const ul = section.querySelector('ul');
     const p = section.querySelector('p');
 
+    // Если есть список (ul), то обновляем его
     if (ul) {
-      ul.innerHTML = "";
+      ul.innerHTML = ''; // очищаем текущие <li>
       t.days[day].items.forEach(item => {
-        const li = document.createElement("li");
+        const li = document.createElement('li');
         li.textContent = item;
         ul.appendChild(li);
       });
     }
 
-    if (p && !ul) {
+    // Если есть параграф (p), обновляем его, но только если он не внутри <header>
+    if (p && !section.querySelector('ul')) {
       p.textContent = t.days[day].items[0];
     }
   });
