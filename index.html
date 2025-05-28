@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Программа тренировок</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="header-top">
+      <h1 id="main-title">Добро пожаловать в программу тренировок</h1>
+      <img src="https://cdn-icons-png.flaticon.com/512/1046/1046751.png" alt="Логотип" class="logo">
+      <div class="language-switch">
+        <button onclick="setLanguage('ru')">Русский</button>
+        <button onclick="setLanguage('kk')">Қазақша</button>
+        <button id="theme-toggle">Сменить тему</button>
+      </div>
+    </div>
+    <p id="main-subtitle">Выберите день недели, чтобы посмотреть программу тренировки:</p>
+    <nav>
+      <button onclick="showDay('monday')">Понедельник</button>
+      <button onclick="showDay('tuesday')">Вторник</button>
+      <button onclick="showDay('wednesday')">Среда</button>
+      <button onclick="showDay('thursday')">Четверг</button>
+      <button onclick="showDay('friday')">Пятница</button>
+      <button onclick="showDay('saturday')">Суббота</button>
+      <button onclick="showDay('sunday')">Воскресенье</button>
+      <a href="#nutrition">Питание</a>
+      <a href="#fitness">Фитнес</a>
+      <a href="#contact">Контакты</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="monday" class="day-section"><h2>Понедельник – СТАРТ!</h2></section>
+    <section id="tuesday" class="day-section"><h2>Вторник – Кардио/Отдых</h2></section>
+    <section id="wednesday" class="day-section"><h2>Среда – БАЗА!</h2></section>
+    <section id="thursday" class="day-section"><h2>Четверг – Растяжка и Мобилизация</h2></section>
+    <section id="friday" class="day-section"><h2>Пятница – НОГИ!</h2></section>
+    <section id="saturday" class="day-section"><h2>Суббота – ПРЕСС!</h2></section>
+    <section id="sunday" class="day-section"><h2>Воскресенье – Отдых</h2></section>
+
+    <section id="nutrition"><h2>Питание</h2><p>Здесь будет информация о правильном питании.</p></section>
+    <section id="fitness"><h2>Фитнес</h2><p>Здесь будет информация о фитнес-программах.</p></section>
+    <section id="contact"><h2>Контакты</h2><p id="contact-text">Свяжитесь с нами по телефону: +7 (705) 515-87-10</p></section>
+  </main>
+
+  <footer>
+    <p>Сайт создан пользователем Ермаханов А.К. | +7 (705) 515-87-10</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
