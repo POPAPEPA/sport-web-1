@@ -1,52 +1,94 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const toggleThemeBtn = document.getElementById("toggle-theme");
-  const toggleLangBtn = document.getElementById("toggle-lang");
-  const scheduleButtons = document.querySelectorAll(".schedule-button");
-  const languageElements = document.querySelectorAll("[data-lang]");
+// Показ дня
+function showDay(dayId) {
+  const sections = document.querySelectorAll(".day-section");
+  const active = document.getElementById(dayId);
 
-  // Смена темы
-  toggleThemeBtn.addEventListener("click", () => {
-    document.body.classList.toggle("dark-theme");
-    const themeIcon = toggleThemeBtn.querySelector("i");
-    themeIcon.classList.toggle("fa-sun");
-    themeIcon.classList.toggle("fa-moon");
+  if (active.classList.contains("show")) {
+    active.classList.remove("show");
+    setTimeout(() => (active.style.display = "none"), 300);
+    return;
+  }
+
+  sections.forEach((section) => {
+    section.classList.remove("show");
+    section.style.display = "none";
   });
 
-  // Смена языка
-  toggleLangBtn.addEventListener("click", () => {
-    const currentLang = document.documentElement.lang;
-    const newLang = currentLang === "ru" ? "kk" : "ru";
-    document.documentElement.lang = newLang;
+  active.style.display = "block";
+  setTimeout(() => active.classList.add("show"), 10);
+}
 
-    languageElements.forEach((el) => {
-      const langKey = el.dataset.lang;
-      el.textContent = translations[langKey][newLang];
-    });
-  });
+// Смена темы
+function toggleTheme() {
+  document.body.classList.toggle("light-theme");
+}
 
-  // Переводы
-  const translations = {
-    title: { ru: "Программа тренировок", kk: "Жаттығу бағдарламасы" },
-    week1: { ru: "Неделя 1", kk: "1-апта" },
-    week2: { ru: "Неделя 2", kk: "2-апта" },
-    // Добавьте остальные ключи по аналогии
-  };
+// Переводы
+const translations = {
+  ru: {
+    selectDay: "Выберите день недели, чтобы посмотреть программу тренировки:",
+    footer: "Сайт создан примерным пользователем: Ермаханов А.К. | +7 (705) 515-87-10",
+    days: {
+      monday: { title: "Понедельник", items: ["Жим лёжа", "Присед", "Тяга верхняя"] },
+      tuesday: { title: "Вторник", items: ["Кардио 30 мин"] },
+      wednesday: { title: "Среда", items: ["Становая тяга", "Выпады", "Подтягивания"] },
+      thursday: { title: "Четверг", items: ["Отдых"] },
+      friday: { title: "Пятница", items: ["Жим гантелей", "Сгибания рук", "Пресс"] },
+      saturday: { title: "Суббота", items: ["Плавание", "Растяжка"] },
+      sunday: { title: "Воскресенье", items: ["Отдых"] }
+    }
+  },
+  kz: {
+    selectDay: "Аптаның күнін таңдап, жаттығу бағдарламасын қараңыз:",
+    footer: "Сайтты жасаған: Ермаханов А.К. | +7 (705) 515-87-10",
+    days: {
+      monday: { title: "Дүйсенбі", items: ["Гүлдену", "Аяқ итеру", "Жоғарғы тарту"] },
+      tuesday: { title: "Сейсенбі", items: ["Кардио 30 мин"] },
+      wednesday: { title: "Сәрсенбі", items: ["Дедлифт", "Қадамдар", "Тартылу"] },
+      thursday: { title: "Бейсенбі", items: ["Демалыс"] },
+      friday: { title: "Жұма", items: ["Гантельмен жаттығу", "Қол бүгу", "Пресс"] },
+      saturday: { title: "Сенбі", items: ["Жүзу", "Созылу"] },
+      sunday: { title: "Жексенбі", items: ["Демалыс"] }
+    }
+  }
+};
 
-  // Переключение расписаний по неделям
-  scheduleButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-      const week = button.dataset.week;
-      const schedule = document.getElementById(`schedule-week-${week}`);
+// Смена языка
+function changeLanguage() {
+  const lang = document.getElementById("language-select").value;
+  const t = translations[lang];
 
-      // Скрыть все расписания
-      document.querySelectorAll(".schedule-week").forEach((el) => {
-        el.style.display = "none";
+  if (!t) return;
+
+  document.getElementById("day-select-text").textContent = t.selectDay;
+  document.getElementById("footer-text").textContent = t.footer;
+
+  for (const day in t.days) {
+    const section = document.getElementById(day);
+    if (!section) continue;
+
+    const h2 = section.querySelector("h2");
+    const ul = section.querySelector("ul");
+    const p = section.querySelector("p");
+
+    h2.textContent = t.days[day].title;
+
+    if (ul) {
+      ul.innerHTML = "";
+      t.days[day].items.forEach((item) => {
+        const li = document.createElement("li");
+        li.textContent = item;
+        ul.appendChild(li);
       });
+    }
 
-      // Показать выбранное
-      if (schedule) {
-        schedule.style.display = "block";
-      }
-    });
-  });
+    if (p) {
+      p.textContent = t.days[day].items.join(", ");
+    }
+  }
+}
+
+// Инициализация при загрузке
+window.addEventListener("DOMContentLoaded", () => {
+  changeLanguage(); // Установим язык по умолчанию (ru)
 });
