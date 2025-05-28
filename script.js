@@ -1,198 +1,143 @@
-function showDay(dayId) {
-  const sections = document.querySelectorAll('.day-section');
-  const active = document.getElementById(dayId);
-
-  if (active.classList.contains('show')) {
-    active.classList.remove('show');
-    setTimeout(() => {
-      active.style.display = 'none';
-    }, 300);
-    return;
-  }
-
-  sections.forEach(section => {
-    section.classList.remove('show');
-    section.style.display = 'none';
-  });
-
-  active.style.display = 'block';
-  setTimeout(() => {
-    active.classList.add('show');
-  }, 10);
-}
+// Объект с переводами
 const translations = {
   ru: {
-    selectDay: "Выберите день недели, чтобы посмотреть программу тренировки:",
-    footer: "Сайт создан примерным пользователем: Ермаханов А.К. | +7 (705) 515-87-10",
+    selectDay: 'Выберите день недели, чтобы увидеть тренировку:',
+    footer: 'Сделано с ❤️ для тренировок',
+    buttons: ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'],
     days: {
       monday: {
-        title: "Понедельник – СТАРТ!",
-        items: [
-          "Суставная разминка",
-          "Отжимания от перекладины – 2x4–6",
-          "Отжимания с колен узким хватом – 2x4–6",
-          "Динамическая планка – 30 сек",
-          "Гиперэкстензия №1 – 30 сек",
-          "Плечи – разогрев – 30 сек",
-          "Подтягивания австралийские – 2x4–6",
-          "Подтягивания негативные – 2x4–6"
-        ]
+        title: 'Понедельник — Грудь и трицепс',
+        items: ['Жим лёжа', 'Разводка гантелей', 'Французский жим', 'Отжимания на брусьях']
       },
       tuesday: {
-        title: "Вторник – Кардио/Отдых",
-        items: ["Можно выйти на прогулку или сделать лёгкое кардио 20–30 минут."]
+        title: 'Вторник — Спина и бицепс',
+        items: ['Подтягивания', 'Тяга штанги в наклоне', 'Сгибания рук со штангой', 'Молотковые сгибания']
       },
       wednesday: {
-        title: "Среда – БАЗА!",
-        items: [
-          "Суставная разминка",
-          "Подтягивания австралийские – 2x5–8",
-          "Подтягивания негативные – 3x5–8",
-          "Планка – наклоны – 1 мин",
-          "Планка с касанием плеч – 1 мин",
-          "Брусья. Отжимания – 3x4–10",
-          "Отжимания широким хватом – 2x5–8",
-          "Алмазные отжимания с колен – 1 подход максимум"
-        ]
+        title: 'Среда — Отдых или кардио',
+        items: ['Отдых или лёгкое кардио']
       },
       thursday: {
-        title: "Четверг – Растяжка и Мобилизация",
-        items: ["Легкие упражнения на растяжку и дыхательные практики (йога, пилатес)."]
+        title: 'Четверг — Ноги',
+        items: ['Приседания', 'Жим ногами', 'Выпады', 'Подъёмы на носки стоя']
       },
       friday: {
-        title: "Пятница – НОГИ!",
-        items: [
-          "Суставная разминка",
-          "Приседания – 2x25",
-          "Выпады – 2x20 шагов",
-          "Приседания сумо – 2x25",
-          "Икры – 2x25 на каждую ногу",
-          "Ягодичный мост – 2x30",
-          "Планка с касанием плеч – 30 сек",
-          "Гиперэкстензия – позиция 2 – 1 мин"
-        ]
+        title: 'Пятница — Плечи и пресс',
+        items: ['Жим штанги над головой', 'Подъёмы гантелей в стороны', 'Скручивания', 'Планка']
       },
       saturday: {
-        title: "Суббота – ПРЕСС!",
-        items: [
-          "Суставная разминка",
-          "Берпи – 5 повторений",
-          "Джампинг-Джек – 20 повторений",
-          "Касание плеч в жуке – 30 сек",
-          "Ситап – 6 повторений",
-          "Скалолаз – 20 повторений",
-          "Складка – 6 повторений",
-          "Планка – 1 минута"
-        ]
+        title: 'Суббота — Функциональная тренировка',
+        items: ['Берпи', 'Скакалка', 'Тяга гири в рывке', 'Бег']
       },
       sunday: {
-        title: "Воскресенье – Отдых",
-        items: ["Полный отдых. Восстановление, прогулка, питание, сон."]
+        title: 'Воскресенье — Отдых',
+        items: ['Полный отдых']
       }
     }
   },
-
   kz: {
-    selectDay: "Жаттығу бағдарламасын көру үшін күнді таңдаңыз:",
-    footer: "Сайтты жасаған: Ермаханов А.К. | +7 (705) 515-87-10",
+    selectDay: 'Аптаның күнін таңдап, жаттығуды көріңіз:',
+    footer: '❤️ арқылы жасалған жаттығу үшін',
+    buttons: ['Дүйсенбі', 'Сейсенбі', 'Сәрсенбі', 'Бейсенбі', 'Жұма', 'Сенбі', 'Жексенбі'],
     days: {
       monday: {
-        title: "Дүйсенбі – БАСТАУ!",
-        items: [
-          "Буындарды қыздыру",
-          "Турникке итермелеу – 2x4–6",
-          "Тізеде тар итеру – 2x4–6",
-          "Динамикалық планка – 30 сек",
-          "Гиперэкстензия №1 – 30 сек",
-          "Иық қыздыру – 30 сек",
-          "Австралиялық тартылу – 2x4–6",
-          "Негативті тартылу – 2x4–6"
-        ]
+        title: 'Дүйсенбі — Кеуде және трицепс',
+        items: ['Жатып штанганы көтеру', 'Гантельмен ашу', 'Француз жатығуы', 'Брусьяға жаттығу']
       },
       tuesday: {
-        title: "Сейсенбі – Кардио/Демалыс",
-        items: ["Серуендеу немесе жеңіл кардио 20–30 минут."]
+        title: 'Сейсенбі — Арқа және бицепс',
+        items: ['Тарту', 'Бұрылып штанга тарту', 'Штанга көтеру', 'Гантельмен көтеру']
       },
       wednesday: {
-        title: "Сәрсенбі – НЕГІЗГІ!",
-        items: [
-          "Буындарды қыздыру",
-          "Австралиялық тартылу – 2x5–8",
-          "Негативті тартылу – 3x5–8",
-          "Планка – еңкею – 1 мин",
-          "Иықты тигізу планка – 1 мин",
-          "Брусья. Итермелеу – 3x4–10",
-          "Кең итеру – 2x5–8",
-          "Гауһар итеру (тізеде) – максимум"
-        ]
+        title: 'Сәрсенбі — Демалыс немесе кардио',
+        items: ['Демалыс немесе жеңіл кардио']
       },
       thursday: {
-        title: "Бейсенбі – Созылу және мобилизация",
-        items: ["Жеңіл созылу және тыныс алу жаттығулары (йога, пилатес)."]
+        title: 'Бейсенбі — Аяқтар',
+        items: ['Отыру', 'Аяқпен итеру', 'Аяқпен алға шығу', 'Тұрып аяқ ұшына көтерілу']
       },
       friday: {
-        title: "Жұма – АЯҚ!",
-        items: [
-          "Буындарды қыздыру",
-          "Отыру – 2x25",
-          "Адым – 2x20 қадам",
-          "Сумо отыру – 2x25",
-          "Аяқ ұштары – әр аяққа 2x25",
-          "Көпір – 2x30",
-          "Иықты тигізу планка – 30 сек",
-          "Гиперэкстензия – 2 позиция – 1 мин"
-        ]
+        title: 'Жұма — Иық және пресс',
+        items: ['Штанганы жоғары көтеру', 'Гантельді екі жаққа көтеру', 'Пресс жасау', 'Планка']
       },
       saturday: {
-        title: "Сенбі – ПРЕСС!",
-        items: [
-          "Буындарды қыздыру",
-          "Бёрпи – 5 рет",
-          "Джампинг-Джек – 20 рет",
-          "Қоңызда иықты тигізу – 30 сек",
-          "Ситап – 6 рет",
-          "Тауға шығу – 20 рет",
-          "Қатпар – 6 рет",
-          "Планка – 1 минут"
-        ]
+        title: 'Сенбі — Функционалдық жаттығу',
+        items: ['Бёрпи', 'Арқанмен секіру', 'Гиря тарту', 'Жүгіру']
       },
       sunday: {
-        title: "Жексенбі – Демалыс",
-        items: ["Толық демалыс. Қалпына келу, серуендеу, тамақтану, ұйқы."]
+        title: 'Жексенбі — Демалыс',
+        items: ['Толық демалыс']
       }
     }
   }
 };
 
+// Сохраняем ссылку на текущий язык
+let currentLang = localStorage.getItem('lang') || 'ru';
+document.getElementById('language-select').value = currentLang;
+
+// Применяем перевод
 function changeLanguage() {
   const lang = document.getElementById('language-select').value;
+  currentLang = lang;
+  localStorage.setItem('lang', lang);
   const t = translations[lang];
 
-  // Меняем текст в описании и футере
+  // Обновляем основной текст
   document.querySelector('header p').textContent = t.selectDay;
   document.querySelector('footer p').textContent = t.footer;
 
-  // Обновляем названия и содержимое для каждого дня
+  // Обновляем кнопки
+  const dayButtons = document.querySelectorAll('#day-buttons button');
+  dayButtons.forEach((btn, idx) => {
+    btn.textContent = t.buttons[idx];
+  });
+
+  // Обновляем содержимое каждой секции
   Object.keys(t.days).forEach(day => {
     const section = document.getElementById(day);
-    section.querySelector('h2').textContent = t.days[day].title;
+    const dayData = t.days[day];
+    section.querySelector('h2').textContent = dayData.title;
 
     const ul = section.querySelector('ul');
     const p = section.querySelector('p');
 
-    // Если есть список (ul), то обновляем его
     if (ul) {
-      ul.innerHTML = ''; // очищаем текущие <li>
-      t.days[day].items.forEach(item => {
+      ul.innerHTML = '';
+      dayData.items.forEach(item => {
         const li = document.createElement('li');
         li.textContent = item;
         ul.appendChild(li);
       });
     }
 
-    // Если есть параграф (p), обновляем его, но только если он не внутри <header>
-    if (p && !section.querySelector('ul')) {
-      p.textContent = t.days[day].items[0];
+    if (p && !ul) {
+      p.textContent = dayData.items[0];
     }
   });
 }
+
+// Переключение секций по кнопкам
+function showSection(dayId) {
+  const sections = document.querySelectorAll('section');
+  sections.forEach(section => {
+    section.classList.remove('active');
+  });
+
+  const target = document.getElementById(dayId);
+  if (target) {
+    target.classList.add('active');
+  }
+}
+
+// Назначаем обработчики событий
+document.getElementById('language-select').addEventListener('change', changeLanguage);
+document.querySelectorAll('#day-buttons button').forEach(button => {
+  button.addEventListener('click', () => {
+    const dayId = button.getAttribute('data-day');
+    showSection(dayId);
+  });
+});
+
+// Первичная инициализация
+changeLanguage();
