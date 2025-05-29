@@ -11,7 +11,6 @@ body {
 }
 
 body.light-mode {
-  body.light-mode {
   background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e'); /* другая светлая картинка */
   background-size: cover;
   background-repeat: no-repeat;
