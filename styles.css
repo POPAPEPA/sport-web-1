@@ -11,9 +11,13 @@ body {
 }
 
 body.light-mode {
-  background-image: none;
-  background-color: #ffffff;
+  body.light-mode {
+  background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e'); /* другая светлая картинка */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   color: #000000;
+  background-color: #ffffff;
 }
 
 header, footer {
