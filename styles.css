@@ -2,7 +2,7 @@
 :root {
   --bg-color: #ffffff;
   --text-color: #000000;
-  --accent-color: #C0C0C0;
+  --accent-color: #808080;
 }
 
 body.dark-theme {
