@@ -2,13 +2,13 @@
 :root {
   --bg-color: #ffffff;
   --text-color: #000000;
-  --accent-color: #808080;
+  --accent-color: #C0C0C0;
 }
 
 body.dark-theme {
   --bg-color: #121212;
   --text-color: #ffffff;
-  --accent-color: #C0C0C0;
+  --accent-color: #808080;
 }
 
 body {
