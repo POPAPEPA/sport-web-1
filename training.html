@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn English - Тренировки</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="training.css">
+</head>
+<body class="training-page">
+    <header>
+        <div class="header-container">
+            <div class="logo-title-container">
+                <div class="logo">
+                    <i class="fas fa-book-open"></i>
+                </div>
+                <h1>Learn English</h1>
+            </div>
+            
+            <nav>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="dictionary.html">Словарь</a></li>
+                    <li><a href="grammar.html">Грамматика</a></li>
+                    <li><a href="games.html">Игры</a></li>
+                    <li><a href="training.html" class="active">Тренировки</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="training-intro">
+            <h2>Грамматические тренировки</h2>
+            <p>Улучшайте свои знания английской грамматики с помощью интерактивных упражнений</p>
+        </section>
+
+        <div class="training-container">
+            <div class="training-tabs">
+                <button class="training-tab-btn easy active" data-tab="easy">Легкий уровень</button>
+                <button class="training-tab-btn medium" data-tab="medium">Средний уровень</button>
+                <button class="training-tab-btn hard" data-tab="hard">Сложный уровень</button>
+            </div>
+            
+            <div class="training-tab-content active" id="easy-tab">
+                <h3>Темы легкого уровня</h3>
+                <div class="training-topic-list">
+                    <div class="training-topic-item easy" data-topic="present-simple">
+                        <i class="fas fa-clock"></i>
+                        <div class="topic-name">Present simple</div>
+                        <div class="topic-description">Базовые формы глаголов</div>
+                    </div>
+                    <div class="training-topic-item easy" data-topic="past-simple">
+                        <i class="fas fa-history"></i>
+                        <div class="topic-name">Past simple</div>
+                        <div class="topic-description">Прошедшие формы глаголов</div>
+                    </div>
+                    <div class="training-topic-item easy" data-topic="future-simple">
+                        <i class="fas fa-rocket"></i>
+                        <div class="topic-name">Future simple</div>
+                        <div class="topic-description">Будущие формы глаголов</div>
+                    </div>
+                    <div class="training-topic-item easy" data-topic="present-continuous">
+                        <i class="fas fa-sync-alt"></i>
+                        <div class="topic-name">Present continuous</div>
+                        <div class="topic-description">Действия в процессе</div>
+                    </div>
+                    <div class="training-topic-item easy" data-topic="present-simple-passive">
+                        <i class="fas fa-shield-alt"></i>
+                        <div class="topic-name">Present simple passive</div>
+                        <div class="topic-description">Пассивные конструкции</div>
+                    </div>
+                    <div class="training-topic-item easy" data-topic="future-simple-passive">
+                        <i class="fas fa-shield-alt"></i>
+                        <div class="topic-name">Future simple passive</div>
+                        <div class="topic-description">Будущие пассивные формы</div>
+                    </div>
+                    <div class="training-topic-item easy" data-topic="ordinal-numerals">
+                        <i class="fas fa-sort-numeric-down"></i>
+                        <div class="topic-name">Ordinal numerals</div>
+                        <div class="topic-description">Порядковые числительные</div>
+                    </div>
+                    <div class="training-topic-item easy" data-topic="degree-of-adjectives">
+                        <i class="fas fa-chart-line"></i>
+                        <div class="topic-name">Degree of adjectives</div>
+                        <div class="topic-description">Степени сравнения</div>
+                    </div>
+                    <div class="training-topic-item easy" data-topic="general-questions">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="topic-name">General questions</div>
+                        <div class="topic-description">Общие вопросы</div>
+                    </div>
+                    <div class="training-topic-item easy" data-topic="there-is-are">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="topic-name">There is, there are</div>
+                        <div class="topic-description">Описание наличия</div>
+                    </div>
+                    <div class="training-topic-item easy" data-topic="used-to">
+                        <i class="fas fa-redo-alt"></i>
+                        <div class="topic-name">Used to</div>
+                        <div class="topic-description">Прошлые привычки</div>
+                    </div>
+                    <div class="training-topic-item easy" data-topic="going-to">
+                        <i class="fas fa-arrow-right"></i>
+                        <div class="topic-name">To be going to</div>
+                        <div class="topic-description">Планы и намерения</div>
+                    </div>
+                </div>
+                
+                <div class="exercises-container" id="easy-exercises"></div>
+            </div>
+
+            <div class="training-tab-content" id="medium-tab">
+                <h3>Темы среднего уровня</h3>
+                <div class="training-topic-list">
+                    <div class="training-topic-item medium" data-topic="past-continuous">
+                        <i class="fas fa-hourglass-half"></i>
+                        <div class="topic-name">Past continuous</div>
+                        <div class="topic-description">Длительные действия в прошлом</div>
+                    </div>
+                    <div class="training-topic-item medium" data-topic="future-continuous">
+                        <i class="fas fa-hourglass"></i>
+                        <div class="topic-name">Future continuous</div>
+                        <div class="topic-description">Длительные действия в будущем</div>
+                    </div>
+                    <div class="training-topic-item medium" data-topic="present-perfect">
+                        <i class="fas fa-check-double"></i>
+                        <div class="topic-name">Present perfect</div>
+                        <div class="topic-description">Связь прошлого и настоящего</div>
+                    </div>
+                    <div class="training-topic-item medium" data-topic="past-perfect">
+                        <i class="fas fa-check-circle"></i>
+                        <div class="topic-name">Past perfect</div>
+                        <div class="topic-description">Предпрошедшее время</div>
+                    </div>
+                    <div class="training-topic-item medium" data-topic="future-perfect">
+                        <i class="fas fa-check-square"></i>
+                        <div class="topic-name">Future perfect</div>
+                        <div class="topic-description">Завершенные действия в будущем</div>
+                    </div>
+                    <div class="training-topic-item medium" data-topic="present-perfect-continuous">
+                        <i class="fas fa-spinner"></i>
+                        <div class="topic-name">Present perfect continuous</div>
+                        <div class="topic-description">Длительные завершенные действия</div>
+                    </div>
+                    <div class="training-topic-item medium" data-topic="past-perfect-continuous">
+                        <i class="fas fa-spinner"></i>
+                        <div class="topic-name">Past perfect continuous</div>
+                        <div class="topic-description">Длительные предпрошедшие действия</div>
+                    </div>
+                    <div class="training-topic-item medium" data-topic="future-in-past">
+                        <i class="fas fa-undo"></i>
+                        <div class="topic-name">Future in the past</div>
+                        <div class="topic-description">Будущее с точки зрения прошлого</div>
+                    </div>
+                    <div class="training-topic-item medium" data-topic="past-simple-passive">
+                        <i class="fas fa-shield-alt"></i>
+                        <div class="topic-name">Past simple passive</div>
+                        <div class="topic-description">Пассив в прошедшем времени</div>
+                    </div>
+                    <div class="training-topic-item medium" data-topic="present-perfect-passive">
+                        <i class="fas fa-shield-alt"></i>
+                        <div class="topic-name">Present perfect passive</div>
+                        <div class="topic-description">Пассив в настоящем совершенном</div>
+                    </div>
+                    <div class="training-topic-item medium" data-topic="irregular-verbs">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <div class="topic-name">Irregular verbs</div>
+                        <div class="topic-description">Неправильные глаголы</div>
+                    </div>
+                    <div class="training-topic-item medium" data-topic="order-of-adjectives">
+                        <i class="fas fa-sort-alpha-down"></i>
+                        <div class="topic-name">Order of adjectives</div>
+                        <div class="topic-description">Порядок прилагательных</div>
+                    </div>
+                    <div class="training-topic-item medium" data-topic="wh-questions">
+                        <i class="fas fa-question"></i>
+                        <div class="topic-name">Wh-questions</div>
+                        <div class="topic-description">Специальные вопросы</div>
+                    </div>
+                    <div class="training-topic-item medium" data-topic="modal-verbs">
+                        <i class="fas fa-gem"></i>
+                        <div class="topic-name">Modal verbs</div>
+                        <div class="topic-description">Модальные глаголы</div>
+                    </div>
+                </div>
+                
+                <div class="exercises-container" id="medium-exercises"></div>
+            </div>
+            
+            <div class="training-tab-content" id="hard-tab">
+                <h3>Темы сложного уровня</h3>
+                <div class="training-topic-list">
+                    <div class="training-topic-item hard" data-topic="future-perfect-continuous">
+                        <i class="fas fa-infinity"></i>
+                        <div class="topic-name">Future perfect continuous</div>
+                        <div class="topic-description">Длительные завершенные будущие действия</div>
+                    </div>
+                    <div class="training-topic-item hard" data-topic="present-continuous-passive">
+                        <i class="fas fa-shield-alt"></i>
+                        <div class="topic-name">Present continuous passive</div>
+                        <div class="topic-description">Пассив в настоящем длительном</div>
+                    </div>
+                    <div class="training-topic-item hard" data-topic="past-continuous-passive">
+                        <i class="fas fa-shield-alt"></i>
+                        <div class="topic-name">Past continuous passive</div>
+                        <div class="topic-description">Пассив в прошедшем длительном</div>
+                    </div>
+                    <div class="training-topic-item hard" data-topic="past-perfect-passive">
+                        <i class="fas fa-shield-alt"></i>
+                        <div class="topic-name">Past perfect passive</div>
+                        <div class="topic-description">Пассив в предпрошедшем времени</div>
+                    </div>
+                    <div class="training-topic-item hard" data-topic="future-perfect-passive">
+                        <i class="fas fa-shield-alt"></i>
+                        <div class="topic-name">Future perfect passive</div>
+                        <div class="topic-description">Пассив в будущем совершенном</div>
+                    </div>
+                    <div class="training-topic-item hard" data-topic="conditional-clauses">
+                        <i class="fas fa-code-branch"></i>
+                        <div class="topic-name">Conditional clauses</div>
+                        <div class="topic-description">Условные предложения</div>
+                    </div>
+                    <div class="training-topic-item hard" data-topic="sequence-of-tenses">
+                        <i class="fas fa-stream"></i>
+                        <div class="topic-name">Sequence of tenses</div>
+                        <div class="topic-description">Согласование времен</div>
+                    </div>
+                    <div class="training-topic-item hard" data-topic="indirect-speech">
+                        <i class="fas fa-comments"></i>
+                        <div class="topic-name">Indirect speech</div>
+                        <div class="topic-description">Косвенная речь</div>
+                    </div>
+                    <div class="training-topic-item hard" data-topic="phrasal-verbs">
+                        <i class="fas fa-puzzle-piece"></i>
+                        <div class="topic-name">Phrasal verbs</div>
+                        <div class="topic-description">Фразовые глаголы</div>
+                    </div>
+                    <div class="training-topic-item hard" data-topic="all-grammar">
+                        <i class="fas fa-globe"></i>
+                        <div class="topic-name">All grammar</div>
+                        <div class="topic-description">Все разделы грамматики</div>
+                    </div>
+                </div>
+                
+                <div class="exercises-container" id="hard-exercises"></div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">
+                <i class="fas fa-book-open"></i>
+                <h2>Learn English</h2>
+            </div>
+            
+            <p>Изучайте английский язык с удовольствием и эффективно</p>
+            
+            <div class="footer-links">
+                <a href="index.html">Главная</a>
+                <a href="dictionary.html">Словарь</a>
+                <a href="grammar.html">Грамматика</a>
+                <a href="games.html">Игры</a>
+                <a href="training.html">Тренировки</a>
+                <a href="#">Контакты</a>
+            </div>
+            
+            <div class="copyright">
+                &copy; Learn English. Все права защищены.
+            </div>
+        </div>
+    </footer>
+
+    <script src="training.js"></script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Learn English - Виселица</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="gallows.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <div class="header-container">
+        <div class="logo-title-container">
+            <div class="logo">
+                <i class="fas fa-book-open"></i>
+            </div>
+            <h1>Learn English</h1>
+        </div>
+        
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Главная</a></li>
+                <li><a href="dictionary.html">Словарь</a></li>
+                <li><a href="grammar.html">Грамматика</a></li>
+                <li><a href="games.html">Игры</a></li>
+                <li><a href="training.html">Тренировки</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+  <main>
+    <section class="games-intro">
+      <h2>Виселица</h2>
+      <p>Угадайте слово по буквам до того, как будет нарисован человечек</p>
+    </section>
+
+    <div class="game-gallows">
+      <div class="container">
+        <div class="category-selector">
+          <label for="categorySelect">Выберите тему для игры:</label>
+          <select id="categorySelect">
+            <option value="">Выберите из списка</option>
+            <option value="фрукты">Фрукты</option>
+            <option value="животные">Животные</option>
+            <option value="профессии">Профессии</option>
+            <option value="цвета">Цвета</option>
+          </select>
+          <button class="play-button" onclick="startGame()">Начать игру</button>
+        </div>
+
+        <div id="gameArea" class="hidden">
+          <div class="hangman-container">
+            <div class="hangman">
+              <div class="gallows"></div>
+              <div class="figure">
+                <div class="head part"></div>
+                <div class="body part"></div>
+                <div class="left-arm part"></div>
+                <div class="right-arm part"></div>
+                <div class="left-leg part"></div>
+                <div class="right-leg part"></div>
+              </div>
+            </div>
+            <p id="wordDisplay"></p>
+            <div id="letters" class="letters-container"></div>
+            <p>Ошибки: <span id="mistakes">0</span> из 6</p>
+            <p id="resultMessage" class="result-message"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+        <div class="footer-logo">
+            <i class="fas fa-book-open"></i>
+            <h2>Learn English</h2>
+        </div>
+        
+        <p>Изучайте английский язык с удовольствием и эффективно</p>
+        
+        <div class="footer-links">
+            <a href="index.html">Главная</a>
+            <a href="dictionary.html">Словарь</a>
+            <a href="grammar.html">Грамматика</a>
+            <a href="games.html">Игры</a>
+            <a href="training.html">Тренировки</a>
+            <a href="#">Контакты</a>
+        </div>
+        
+        <div class="copyright">
+            &copy; Learn English. Все права защищены.
+        </div>
+    </div>
+</footer>
+
+  <script src="gallows.js"></script>
+</body>
+</html>

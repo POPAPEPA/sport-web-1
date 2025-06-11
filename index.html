@@ -1,137 +1,126 @@
-
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Программа тренировок</title>
-  <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn English - Главная</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    </style>
 </head>
 <body>
-  <header>
-    <div class="header-top">
-      <img src="logo.jpeg" alt="Логотип" class="logo" />
-      <h1 id="main-title">Добро пожаловать в программу тренировок</h1>
-      <div class="language-switch">
-        <button onclick="setLanguage('ru')">Русский</button>
-        <button onclick="setLanguage('kk')">Қазақша</button>
-        <button id="theme-toggle">Сменить тему</button>
-      </div>
-    </div>
-    <p id="main-subtitle">Выберите день недели, чтобы посмотреть программу тренировки:</p>
-    <nav id="weekdays">
-      <button onclick="showDay('monday')" data-ru="Понедельник" data-kk="Дүйсенбі">Понедельник</button>
-      <button onclick="showDay('tuesday')" data-ru="Вторник" data-kk="Сейсенбі">Вторник</button>
-      <button onclick="showDay('wednesday')" data-ru="Среда" data-kk="Сәрсенбі">Среда</button>
-      <button onclick="showDay('thursday')" data-ru="Четверг" data-kk="Бейсенбі">Четверг</button>
-      <button onclick="showDay('friday')" data-ru="Пятница" data-kk="Жұма">Пятница</button>
-      <button onclick="showDay('saturday')" data-ru="Суббота" data-kk="Сенбі">Суббота</button>
-      <button onclick="showDay('sunday')" data-ru="Воскресенье" data-kk="Жексенбі">Воскресенье</button>
-    </nav>
-  </header>
-  <div class="background-image"></div>
-  <main>
-    <section id="monday" class="day-section">
-      <h2 data-ru="Понедельник – РУКИ И СПИНА" data-kk="Дүйсенбі – ҚОЛ МЕН АРҚА">Понедельник – РУКИ И СПИНА</h2>
-      <p data-ru="Цель: укрепить верхнюю часть спины и руки, улучшить осанку." 
-         data-kk="Мақсат: арқа мен қолдарды бұлшықеттерін нығайтып, дене қалпын жақсарту.">
-        Цель: укрепить верхнюю часть спины и руки, улучшить осанку.
-      </p>
-      <ul>
-        <li data-ru="Суставная разминка" data-kk="Бірлескен жылыту">Суставная разминка</li>
-        <li data-ru="Отжимания — 3×10 (с колен, если нужно)" data-kk="Отжимание — 3×10 (қажет болса, тіземен)">Отжимания — 3×10 (с колен, если нужно)</li>
-        <li data-ru="Подтягивание — 2×10" data-kk="тарту — 2×10">Подтягивание — 2×10</li>
-        <li data-ru="Отжимания с колен узким хватом — 3×30" data-kk="Тар ұстағышпен тізе итеру — 3×30">Отжимания с колен узким хватом — 3×30</li>
-        <li data-ru="Отжимание на брусьях — 2×10" data-kk="Брусьямен отжимание — 2×10">Отжимание на брусьях — 2×10</li>
-      </ul>
-    </section>
+    <header>
+        <div class="header-container">
+            <div class="logo-title-container">
+                <div class="logo">
+                    <i class="fas fa-book-open"></i>
+                </div>
+                <h1>Learn English</h1>
+            </div>
+            
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">Главная</a></li>
+                    <li><a href="dictionary.html">Словарь</a></li>
+                    <li><a href="grammar.html">Грамматика</a></li>
+                    <li><a href="games.html">Игры</a></li>
+                    <li><a href="training.html">Тренировки</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-    <section id="tuesday" class="day-section"><h2 data-ru="Вторник – Отдых" data-kk="Сейсенбі – Демалыс">Вторник – Отдых</h2></section>
-    
-    <section id="wednesday" class="day-section">
-      <h2 data-ru="Среда – НОГИ" data-kk="Сәрсенбі – АЯҚ">Среда – НОГИ</h2>
-     <p data-ru="Цель: развитие силы и выносливости ног." 
-         data-kk="Мақсат: аяқ бұлшықеттерінің күші мен төзімділігін арттыру.">
-        Цель: развитие силы и выносливости ног.
-      </p>
-      <ul>
-        <li data-ru="Суставная разминка" data-kk="Бірлескен жылыту">Суставная разминка</li>
-        <li data-ru="Приседания с прыжком – 3×10" data-kk="Секіріп отыру – 3×10">Приседания с прыжком – 3×10</li>
-        <li data-ru="Ягодичный мостик с удержанием – 3×20" data-kk="Көпірше ұстап тұру – 3×20">Ягодичный мостик с удержанием – 3×20</li>
-        <li data-ru="Икры – 3×10 на каждую ногу" data-kk="Уылдырық – әр аяққа 3×10">Икры – 3×10 на каждую ногу</li>
-        <li data-ru="Выпады – 3×10" data-kk="Секіру – 3×10">Выпады – 3×10</li>
-      </ul>
-    </section>
-    
-    <section id="thursday" class="day-section"><h2 data-ru="Четверг – Отдых" data-kk="Бейсенбі – Демалыс">Четверг – Отдых</h2></section>
-    
-    <section id="friday" class="day-section">
-      <h2 data-ru="Пятница – ПРЕСС" data-kk="Жұма – ПРЕСС">Пятница – ПРЕСС</h2>
-      <p data-ru="Цель: укрепление мышц живота, улучшение баланса." 
-         data-kk="Мақсат: іш бұлшықеттерін нығайту, тепе-теңдікті жақсарту.">
-        Цель: укрепление мышц живота, улучшение баланса.
-      </p>
-      <ul>
-        <li data-ru="Суставная разминка" data-kk="Бірлескен жылыту">Суставная разминка</li>
-        <li data-ru="Скручивания – 3×20" data-kk="Ішке бұралу – 3×20">Скручивания – 3×20</li>
-        <li data-ru="Подъём ног лёжа – 3×15" data-kk="Аяқты жоғары көтеру – 3×15">Подъём ног лёжа – 3×15</li>
-        <li data-ru="Планка – 3×45 секунд" data-kk="Планка – 3×45 секунд">Планка – 3×45 секунд</li>
-        <li data-ru="Русский твист – 3×20" data-kk="Орысша бұралу – 3×20">Русский твист – 3×20</li>
-      </ul>
-    </section>
-    
-    <section id="saturday" class="day-section">
-      <h2 data-ru="Суббота – отдых" data-kk="Сенбі – Демалыс">Суббота – Отдых</h2></section>
-    
-    <section id="sunday" class="day-section"><h2 data-ru="Воскресенье – Отдых" data-kk="Жексенбі – Демалыс">Воскресенье – Отдых</h2></section>
+    <main>
+        <section class="dictionary-intro">
+            <h2>Добро пожаловать в Learn English!</h2>
+            <p>Изучайте английский язык легко и эффективно с помощью интерактивных инструментов и игровых методик.</p>
+        </section>
 
-    <section id="nutrition">
-      <h2 data-ru="Питание" data-kk="Тамақтану">Питание</h2>
-      <p data-ru="Здесь представлено базовое питание и его замены при аллергии:" data-kk="Бұл жерде негізгі тағам және аллергия кезінде оны ауыстырулар көрсетілген.">
-        Здесь представлено базовое питание и его замены при аллергии:
-      </p>
-    
-      <table border="1" style="width: 100%; border-collapse: collapse; text-align: left;">
-        <thead>
-          <tr>
-            <th data-ru="Категория" data-kk="Санат">Категория</th>
-            <th data-ru="Основной продукт" data-kk="Негізгі өнім">Основной продукт</th>
-            <th data-ru="Если противопоказан — замена" data-kk="Қарсы көрсетілім болса — алмастыру">Если противопоказан — замена</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>Белок</td><td>Яйца</td><td>Красное мясо (говядина, телятина)</td></tr>
-          <tr><td>Белок</td><td>Курица</td><td>Говядина, индейка, баранина</td></tr>
-          <tr><td>Белок</td><td>Творог</td><td>Тофу, фасоль, чечевица, безлактозный творог</td></tr>
-          <tr><td>Углеводы</td><td>Овсянка, гречка</td><td>Киноа, булгур, картофель</td></tr>
-          <tr><td>Жиры</td><td>Орехи</td><td>Авокадо, оливковое или льняное масло</td></tr>
-        </tbody>
-      </table>
+        <section class="word-sets">
+            <h3>Основные разделы</h3>
+            <div class="sets-container">
+                <div class="set-column">
+                    <a href="dictionary.html" class="word-set">
+                        <i class="fas fa-book"></i>
+                        <div class="set-name">Словарь</div>
+                        <div class="word-count">Тематические наборы слов</div>
+                    </a>
+                    <a href="training.html" class="word-set">
+                        <i class="fas fa-dumbbell"></i>
+                        <div class="set-name">Тренировки</div>
+                        <div class="word-count">Упражнения для закрепления</div>
+                    </a>
+                </div>
+                
+                <div class="set-column">
+                    <a href="games.html" class="word-set">
+                        <i class="fas fa-gamepad"></i>
+                        <div class="set-name">Игры</div>
+                        <div class="word-count">Интерактивное изучение</div>
+                    </a>
+                    <a href="grammar.html" class="word-set">
+                        <i class="fas fa-language"></i>
+                        <div class="set-name">Грамматика</div>
+                        <div class="word-count">Все правила и времена</div>
+                    </a>
+                </div>
+            </div>
+        </section>
 
-      <h3 data-ru="Пример меню на день:" data-kk="Бір күндік үлгі мәзір:">Пример меню на день:</h3>
-      <ul>
-        <li data-ru="Завтрак: 2 яйца (или 100 г говядины), овсянка на воде, банан, зелёный чай" 
-            data-kk="Таңғы ас: 2 жұмыртқа (немесе 100 г сиыр еті), суға піскен сұлы, банан, көк шай">
-            Завтрак: 2 яйца (или 100 г говядины), овсянка на воде, банан, зелёный чай</li>
-        <li data-ru="Перекус: Йогурт без лактозы, горсть орехов (или хлебец + 1 ч.л. масла)" 
-            data-kk="Түске дейінгі ас: Лактозасыз йогурт, бір уыс жаңғақ (немесе нан мен 1 шай қасық май)">
-            Перекус: Йогурт без лактозы, горсть орехов (или хлебец + 1 ч.л. масла)</li>
-        <li data-ru="Обед: Куриная грудка (или телятина), гречка, тушёные овощи" 
-            data-kk="Түскі ас: Тауық еті (немесе бұзау еті), қарақұмық, бұқтырылған көкөністер">
-            Обед: Куриная грудка (или телятина), гречка, тушёные овощи</li>
-        <li data-ru="Полдник: Протеиновый батончик или яблоко" 
-            data-kk="Түстен кейінгі ас: Протеинді батончик немесе алма">
-            Полдник: Протеиновый батончик или яблоко</li>
-        <li data-ru="Ужин: Омлет из 2-х яиц (или индейка), капуста тушёная, хлебец" 
-            data-kk="Кешкі ас: 2 жұмыртқадан омлет (немесе күркетауық), бұқтырылған орамжапырақ, нан">
-            Ужин: Омлет из 2-х яиц (или индейка), капуста тушёная, хлебец</li>
-      </ul>
-    </section>
-    
-    <section id="fitness"><h2 data-ru="Фитнес" data-kk="Фитнес">Фитнес</h2><p>Здесь будет информация о фитнес-программах.</p></section>
-    <section id="contact"><h2 data-ru="Контакты" data-kk="Байланыс">Контакты</h2><p id="contact-text">Свяжитесь с нами по телефону: +7 (705) 515-87-10</p></section>
-  </main>
-  <footer><p>Сайт создан пользователем Ермаханов А.К. | +7 (705) 515-87-10</p></footer>
-  <script src="script.js"></script>
+        <section class="highlight">
+            <h2>Почему выбирают нас?</h2>
+            <div class="features-container">
+                <div class="feature">
+                    <div class="title">
+                        <i class="fas fa-gamepad"></i>
+                        Интерактивное обучение
+                    </div>
+                    <div class="description">Используйте игровые методы для эффективного запоминания слов и правил английского языка.</div>
+                </div>
+                
+                <div class="feature">
+                    <div class="title">
+                        <i class="fas fa-book"></i>
+                        Тематические наборы
+                    </div>
+                    <div class="description">Изучайте слова в контексте конкретных тем и ситуаций для лучшего запоминания.</div>
+                </div>
+                
+                <div class="feature">
+                    <div class="title">
+                        <i class="fas fa-chart-line"></i>
+                        Грамматика
+                    </div>
+                    <div class="description">Подробные объяснения всех времен и правил с примерами и практическими заданиями.</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">
+                <i class="fas fa-book-open"></i>
+                <h2>Learn English</h2>
+            </div>
+            
+            <p>Изучайте английский язык с удовольствием и эффективно</p>
+            
+            <div class="footer-links">
+                <a href="index.html">Главная</a>
+                <a href="dictionary.html">Словарь</a>
+                <a href="grammar.html">Грамматика</a>
+                <a href="games.html">Игры</a>
+                <a href="training.html">Тренировки</a>
+                <a href="#">Контакты</a>
+            </div>
+            
+            <div class="copyright">
+                &copy; Learn English. Все права защищены.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>

@@ -1,0 +1,225 @@
+/* Удалены глобальные стили body, добавлены префиксы для изоляции стилей игры */
+.game-gallows {
+    text-align: center;
+    padding: 30px 0;
+  }
+  
+  .game-gallows .container {
+    max-width: 600px;
+    margin: auto;
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+  }
+  
+  .game-gallows #letters button {
+    margin: 4px;
+    padding: 8px 15px;
+    background: #eef5ff;
+    border: 2px solid #2a4d8e;
+    border-radius: 8px;
+    color: #1a2a6c;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  
+  .game-gallows #letters button:hover {
+    background: #2a4d8e;
+    color: white;
+  }
+  
+  .game-gallows #letters button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  .game-gallows .hidden {
+    display: none;
+  }
+  
+  .game-gallows #wordDisplay {
+    font-size: 28px;
+    letter-spacing: 8px;
+    margin: 30px 0;
+    color: #1a2a6c;
+    font-weight: 700;
+  }
+  
+  .game-gallows .hangman-container {
+    background: #f8fbff;
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 25px;
+    border: 1px solid #e0e7ff;
+  }
+  
+  .game-gallows .hangman {
+    position: relative;
+    height: 250px;
+    margin: 0 auto 30px;
+    max-width: 220px;
+  }
+  
+  .game-gallows .gallows {
+    position: absolute;
+    width: 100px;
+    height: 250px;
+    border-left: 5px solid #2c3e50;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .game-gallows .gallows::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 5px;
+    width: 60px;
+    background: #2c3e50;
+  }
+  
+  .game-gallows .gallows::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 60px;
+    width: 2px;
+    height: 40px;
+    background: #2c3e50;
+  }
+  
+  .game-gallows .figure {
+    position: absolute;
+    left: calc(50% + 25px);
+    top: 30px;
+    transform: translateX(-50%);
+  }
+  
+  .game-gallows .part {
+    display: none;
+    background: #2c3e50;
+    position: absolute;
+  }
+  
+  .game-gallows .head {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 4px solid #2c3e50;
+    top: 0;
+    left: -15px;
+  }
+  
+  .game-gallows .body {
+    width: 4px;
+    height: 50px;
+    top: 34px;
+    left: 0;
+  }
+  
+  .game-gallows .left-arm {
+    width: 30px;
+    height: 4px;
+    top: 45px;
+    left: -30px;
+    transform: rotate(30deg);
+  }
+  
+  .game-gallows .right-arm {
+    width: 30px;
+    height: 4px;
+    top: 45px;
+    left: 4px;
+    transform: rotate(-30deg);
+  }
+  
+  .game-gallows .left-leg {
+    width: 4px;
+    height: 25px;
+    top: 84px;
+    left: -5px;
+    transform: rotate(0deg);
+  }
+  
+  .game-gallows .right-leg {
+    width: 4px;
+    height: 25px;
+    top: 84px;
+    left: 5px;
+    transform: rotate(0deg);
+  }
+  
+  .game-gallows .category-selector {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .game-gallows .category-selector label {
+    font-weight: 600;
+    color: #2a4d8e;
+  }
+  
+  .game-gallows .category-selector select {
+    padding: 10px 15px;
+    border: 2px solid #e0e7ff;
+    border-radius: 8px;
+    background: #f8fbff;
+    color: #1a2a6c;
+    font-weight: 500;
+  }
+  
+  .game-gallows .play-button {
+    background: linear-gradient(135deg, #2a4d8e, #1a2a6c);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 15px rgba(42, 77, 142, 0.3);
+  }
+  
+  .game-gallows .play-button:hover {
+    box-shadow: 0 6px 20px rgba(42, 77, 142, 0.4);
+  }
+  
+  .game-gallows #mistakes {
+    font-weight: 700;
+    color: #e74c3c;
+    font-size: 1.2em;
+  }
+  
+  .game-gallows .result-message {
+    font-size: 1.4em;
+    font-weight: 700;
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 8px;
+  }
+  
+  .game-gallows .result-message.success {
+    color: #27ae60;
+    background: rgba(39, 174, 96, 0.1);
+  }
+  
+  .game-gallows .result-message.failure {
+    color: #e74c3c;
+    background: rgba(231, 76, 60, 0.1);
+  }
+  .game-gallows .play-button {
+    margin-top: 20px;
+    position: relative;
+    z-index: 1;
+  }
